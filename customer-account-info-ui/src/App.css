@@ -1,0 +1,65 @@
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #dee1e8;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: top;
+    justify-content: top;
+    font-size: calc(10px + 2vmin);
+    color: rgb(22, 21, 21);
+}
+
+input {
+    padding: 8px;
+    margin: 8px;
+}
+
+button {
+    padding: 8px 16px;
+    margin: 8px;
+    cursor: pointer;
+}
+
+h2,
+h3 {
+    margin: 16px 0 8px;
+}
+
+table {
+    margin: 16px 0;
+    border-collapse: collapse;
+    width: 80%;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+th {
+    background-color: #4c86af;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+    cursor: pointer;
+}
