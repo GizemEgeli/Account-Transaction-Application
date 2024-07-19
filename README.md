@@ -230,3 +230,4 @@ Displays a list of transactions for a selected account.
 - The default API endpoints are configured for `http://localhost:8081` for the accounts API and `http://localhost:8082` for the transactions API. Adjust these endpoints as needed in the UI configuration.
 - The `customer-accounts-api` uses an H2 in-memory database for development. The initial data is loaded from `src/main/resources/data.sql`.
 - If the `transactions-api` is not running when you start the `customer-accounts-api`, the Customer Account Info service will not function correctly and will return errors when attempting to retrieve account transactions. Ensure both services are running simultaneously.
+- A Postman collection file Account-Transaction-Application.postman_collection.json is included in the root directory for testing the APIs.
