@@ -1,9 +1,9 @@
 package com.company.customeraccountsapi.controller;
 
 import com.company.customeraccountsapi.model.dto.CreateAccountRequest;
-import com.company.customeraccountsapi.model.dto.UserAccountInfoDTO;
+import com.company.customeraccountsapi.model.dto.CustomerAccountInfoDTO;
 import com.company.customeraccountsapi.service.AccountService;
-import com.company.customeraccountsapi.service.UserAccountInfoService;
+import com.company.customeraccountsapi.service.CustomerAccountInfoService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +31,7 @@ class CustomerAccountControllerTest {
     private AccountService accountService;
 
     @MockBean
-    private UserAccountInfoService userAccountInfoService;
+    private CustomerAccountInfoService customerAccountInfoService;
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -47,9 +47,9 @@ class CustomerAccountControllerTest {
     }
 
     @Test
-    void testGetUserAccountInfo() throws Exception {
-        UserAccountInfoDTO userAccountInfoDTO = new UserAccountInfoDTO("Gizem", "Egeli", Collections.emptyList());
-        when(userAccountInfoService.getUserAccountInfo(1L)).thenReturn(userAccountInfoDTO);
+    void testGetCustomerAccountInfo() throws Exception {
+        CustomerAccountInfoDTO customerAccountInfoDTO = new CustomerAccountInfoDTO("Gizem", "Egeli", Collections.emptyList());
+        when(customerAccountInfoService.getCustomerAccountInfo(1L)).thenReturn(customerAccountInfoDTO);
 
         mockMvc.perform(get("/api/v1/accounts/1/account-info")
                         .contentType(MediaType.APPLICATION_JSON))

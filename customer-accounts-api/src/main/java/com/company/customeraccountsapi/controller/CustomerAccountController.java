@@ -1,9 +1,9 @@
 package com.company.customeraccountsapi.controller;
 
 import com.company.customeraccountsapi.model.dto.CreateAccountRequest;
-import com.company.customeraccountsapi.model.dto.UserAccountInfoDTO;
+import com.company.customeraccountsapi.model.dto.CustomerAccountInfoDTO;
 import com.company.customeraccountsapi.service.AccountService;
-import com.company.customeraccountsapi.service.UserAccountInfoService;
+import com.company.customeraccountsapi.service.CustomerAccountInfoService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/v1/accounts")
 public class CustomerAccountController {
     private final AccountService accountService;
-    private final UserAccountInfoService userAccountInfoService;
+    private final CustomerAccountInfoService customerAccountInfoService;
 
     @PostMapping
     public ResponseEntity<Void> createAccount(@RequestBody CreateAccountRequest createAccountRequest) {
@@ -23,8 +23,8 @@ public class CustomerAccountController {
     }
 
     @GetMapping("/{customerId}/account-info")
-    public ResponseEntity<UserAccountInfoDTO> getUserAccountInfo(@PathVariable Long customerId) {
-        UserAccountInfoDTO userAccountInfo = userAccountInfoService.getUserAccountInfo(customerId);
-        return new ResponseEntity<>(userAccountInfo, HttpStatus.OK);
+    public ResponseEntity<CustomerAccountInfoDTO> getCustomerAccountInfo(@PathVariable Long customerId) {
+        CustomerAccountInfoDTO customerAccountInfoDTO = customerAccountInfoService.getCustomerAccountInfo(customerId);
+        return new ResponseEntity<>(customerAccountInfoDTO, HttpStatus.OK);
     }
 }
