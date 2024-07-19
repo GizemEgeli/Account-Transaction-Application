@@ -186,7 +186,7 @@ GET /api/v1/account-transactions/{accountId}
 
 The `customer-account-info-ui` is a React-based frontend application for interacting with the `customer-accounts-api` and `transactions-api`. It allows users to create accounts and view account and transaction details.
 
-## - [Customer Account Info UI Setup](#customer-account-info-ui-setup)
+## Customer Account Info UI Setup
 
 1. Clone the repository.
 2. Navigate to the project directory.
