@@ -32,9 +32,17 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     public List<TransactionDTO> getTransactionsByAccountId(Long accountId) {
+        validateAccountId(accountId);
         List<AccountTransaction> transactions = transactionRepository.findByAccountId(accountId);
         return transactions.stream()
                 .map(transactionMapper::toTransactionDTO)
                 .toList();
+    }
+
+    private void validateAccountId(Long accountId) {
+        if (accountId == null || accountId <= 0) {
+            log.error("Invalid account ID: {}", accountId);
+            throw new IllegalArgumentException("Account ID cannot be null");
+        }
     }
 }
